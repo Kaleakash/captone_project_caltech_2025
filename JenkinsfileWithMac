@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+    tools{
+        nodejs "NODEJS",
+        maven "M3"
+    }
+    stages {
+        stage(All tools version"){
+            steps{
+                sh "mvn --version"
+                sh "node --version"
+                sh "docker --version"
+            }
+        }
+        stage("Build Angular Project"){
+            steps{
+                sh "npm install"
+                sh "npx -p @angular/cli@16.0.1 ng build"
+            }
+        }
+        stage("Build Login Micro service"){
+            steps{
+                dir("./backend/login-micro-service"){
+                    sh "pwd"
+                    sh "mvn clean package"
+                }
+            }
+        }
+        stage("Run All container using docker compose"){
+            steps{
+                sh "docker-compose up --build -d"
+                sh "docker images"
+                sh "docker container ps"
+            }
+        }
+    }
+    post {
+        always {
+            echo 'This will always run'
+        }
+        success {
+            echo 'This will run only if successful'
+        }
+        failure {
+            echo 'This will run only if failed'
+        }
+        changed {
+            echo 'This will run only if the state of the Pipeline has changed'
+            echo 'Example : if the Pipeline was previously failing but is now successful'
+        }
+    }
+}
