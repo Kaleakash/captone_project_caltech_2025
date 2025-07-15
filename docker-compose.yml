@@ -1,3 +1,4 @@
+
 services:
   angular-service:
     build: ./frontend/login-app/.
