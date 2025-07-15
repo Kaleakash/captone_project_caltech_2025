@@ -20,6 +20,13 @@ pipeline {
                 }
             }
         }
+        stage("Build Eureka Server"){
+            steps{
+                dir("./backend/erueka-server"){
+                    bat "mvn clean package"
+                }
+            }
+        }
         stage("Build Login Micro service"){
             steps{
                 dir("./backend/login-micro-service"){
