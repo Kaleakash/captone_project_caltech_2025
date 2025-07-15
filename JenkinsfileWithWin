@@ -13,8 +13,8 @@ pipeline {
         }
         stage("Build Angular Project"){
             steps{
-                bat "npm install"
                 dir("./frontend/login-app"){
+                    bat "npm install"
                     bat "npx -p @angular/cli@16.0.1 ng build"
                 }
             }
