@@ -2,7 +2,7 @@ services:
   angular-service:
     build: ./frontend/login-app/.
     ports:
-      - 80:80
+      - 81:80
   eureka-server:
     build: ./backend/erueka-server/.
     ports:

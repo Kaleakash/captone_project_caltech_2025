@@ -36,6 +36,7 @@ pipeline {
         }
         stage("Run All container using docker compose"){
             steps{
+                bat "docker-compose down"
                 bat "docker-compose up --build -d"
                 bat "docker images"
                 bat "docker container ps"
