@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs "NODEJS"
+        maven "M3"
     }
     stages {
         stage("All tools version"){
@@ -22,7 +23,6 @@ pipeline {
         stage("Build Login Micro service"){
             steps{
                 dir("./backend/login-micro-service"){
-                    bat "pwd"
                     bat "mvn clean package"
                 }
             }
