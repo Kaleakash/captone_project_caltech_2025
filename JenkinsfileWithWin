@@ -14,7 +14,9 @@ pipeline {
         stage("Build Angular Project"){
             steps{
                 bat "npm install"
-                bat "npx -p @angular/cli@16.0.1 ng build"
+                dir("./frontend/login-app"){
+                    bat "npx -p @angular/cli@16.0.1 ng build"
+                }
             }
         }
         stage("Build Login Micro service"){
