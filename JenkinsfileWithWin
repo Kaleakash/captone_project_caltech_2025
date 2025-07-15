@@ -5,7 +5,7 @@ pipeline {
         maven "M3"
     }
     stages {
-        stage(All tools version"){
+        stage("All tools version"){
             steps{
                 bat "mvn --version"
                 bat "node --version"
