@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        `nodejs "NODEJS"`,
-        `maven "M3"`
+        'nodejs "NODEJS"',
+        'maven "M3"'
     }
     stages {
         stage("All tools version"){
