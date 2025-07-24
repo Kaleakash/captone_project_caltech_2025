@@ -23,6 +23,7 @@ public class LoginMicroServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LoginMicroServiceApplication.class, args);
 		System.out.println("Login micro service up on port number 9090");
+	
 	}
 	
 	
