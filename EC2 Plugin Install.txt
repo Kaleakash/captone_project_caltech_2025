@@ -54,11 +54,8 @@ Now, to download the latest Jenkins package
 
 	**iv. **To enable the installation of the package, import the key file from Jenkins-CI:
 
---->sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
-    or 
-
-  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+------> sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
 	Install Jenkins on the EC2 instance
 
