@@ -1,0 +1,11 @@
+<div>
+    <span style="color: red;">{{msg}}</span><br/>
+    <div *ngFor="let product of products" 
+    style="display: inline-block;border: 1px red solid; margin: 10px; padding: 5px;">
+        <img src={{product.imageurl}} width="100px" height="100px"/><br/>
+        <span>Name : {{product.pname}} Price : {{product.price}}</span>
+        <br/>
+        Qty:<input type="number" name="qty" #tempRef (change)="setQty(tempRef.value)"/>
+        <input type="button" value="Place Order" (click)="placeOrder(product.pid)" class="btn btn-success"/>
+    </div>
+</div>

@@ -1,5 +1,3 @@
-
-
 pipeline {
     agent any
     tools {
@@ -14,6 +12,14 @@ pipeline {
                 bat "docker --version"
             }
         }
+        stage("Build Angular Project"){
+            steps{
+                dir("./frontend/login-app"){
+                    bat "npm install"
+                    bat "npx -p @angular/cli@16.0.1 ng build"
+                }
+            }
+        }
         stage("Build Eureka Server"){
             steps{
                 dir("./backend/erueka-server"){
@@ -24,6 +30,13 @@ pipeline {
         stage("Build Login Micro service"){
             steps{
                 dir("./backend/login-micro-service"){
+                    bat "mvn clean package"
+                }
+            }
+        }
+        stage("Build Product Micro service"){
+            steps{
+                dir("./backend/product-micro-service"){
                     bat "mvn clean package"
                 }
             }

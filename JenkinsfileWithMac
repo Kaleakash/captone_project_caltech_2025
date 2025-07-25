@@ -33,6 +33,13 @@ pipeline {
                 }
             }
         }
+        stage("Build Product Micro service"){
+            steps{
+                dir("./backend/product-micro-service"){
+                    sh "mvn clean package"
+                }
+            }
+        }
         stage("Run All container using docker compose"){
             steps{
                 sh "docker-compose down"

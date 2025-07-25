@@ -10,6 +10,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import {HttpClientModule} from '@angular/common/http'; // Import HttpClientModule for HTTP requests
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminProductOperationComponent } from './admin-product-operation/admin-product-operation.component';
+import { CustomerProductOperationComponent } from './customer-product-operation/customer-product-operation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SignupComponent,
     ChangePasswordComponent,
     AdminDashboardComponent,
-    CustomerDashboardComponent
+    CustomerDashboardComponent,
+    AdminProductOperationComponent,
+    CustomerProductOperationComponent
   ],
   imports: [
     BrowserModule,

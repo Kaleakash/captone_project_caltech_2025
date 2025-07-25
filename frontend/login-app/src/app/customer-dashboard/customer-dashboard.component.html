@@ -1,5 +1,9 @@
 <div>
     <h2>Welcome to Customer Home Page user {{user}}
         <input type="button" value="logout" (click)="logout()"/>
+        <br/>
+        <a routerLink="product-details">View Product</a>
+        <hr/>
+        <router-outlet></router-outlet>
     </h2>
 </div>

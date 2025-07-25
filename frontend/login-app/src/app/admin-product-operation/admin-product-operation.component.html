@@ -1,0 +1,41 @@
+
+
+
+
+<div>
+    <span style="color:red">{{msg}}</span>
+    <h3>Add Product</h3>
+    <form [formGroup]="productRef" class="form-group" (ngSubmit)="storeProduct()">
+            <label>PId</label>
+            <input type="number" formControlName="pid" class="form-control"/><br/>
+            <label>PName</label>
+            <input type="text" formControlName="pname" class="form-control"/><br/>
+            <label>Price</label>
+            <input type="number" formControlName="price" class="form-control"/><br/>
+            <label>Qty</label>
+            <input type="number" formControlName="qty" class="form-control"/><br/>
+            <label>Image URL</label>
+            <input type="url" formControlName="imageurl" class="form-control"/><br/>
+            <input type="submit" value="store product" class="btn btn-success"/>
+            <input type="reset" value="reset" class="btn btn-info"/>
+    </form>
+    <hr/>
+    <h3>Product Details</h3>
+    <table class="table">
+        
+        <tr>
+            <th>PId</th>
+            <th>PName</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>ImageURL</th>
+        </tr>
+        <tr *ngFor="let product of products">
+            <td>{{product.pid}}</td>
+            <td>{{product.pname}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.qty}}</td>
+            <td><img src={{product.imageurl}} width="200px" height="200px"/></td>
+        </tr>
+    </table>
+</div>
